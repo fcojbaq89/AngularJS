@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MyFirstApp">
   <head>
     <meta charset="utf-8">
-    <title>Hola mundo con AngularJS</title>
+    <title>Hola Controller</title>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+	<script src="controller.js"></script>
   </head>
-  <body ng-app>
-    {{"Hola" + " Mundo"}}
+  <body ng-controller="FisrtControler">
+    {{"Hola " + nombre}}
 </body>
 </html>
