@@ -1,0 +1,22 @@
+{
+  "name": "angularjs",
+  "description": "Mi primera página node",
+  "main": "index.html",
+  "authors": [
+    "fcojbaq89"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/fcojbaq89/AngularJS",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7"
+  }
+}

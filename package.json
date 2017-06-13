@@ -1,0 +1,25 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "Mi página de prueba con node",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "grunt-cli": "^1.2.0",
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcojbaq89/AngularJS.git"
+  },
+  "author": "fcojbaq89",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fcojbaq89/AngularJS/issues"
+  },
+  "homepage": "https://github.com/fcojbaq89/AngularJS#readme"
+}
