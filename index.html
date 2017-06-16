@@ -1,28 +1,50 @@
 <!DOCTYPE html>
-<html ng-app="MyFirstApp">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<title>Mi primera página con AngularJS</title>
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 		<script src="controller.js"></script>
 	</head>
 	
-	<body ng-controller="FisrtControler">
+	<body ng-app="myApp">
 		<div>
-			<p>{{"Angul"+"arJS"}}</p>
+			<h3>{{"Angul"+"arJS"}}</h3>
 		</div>
-		<ul>
-			<li ng-repeat="post in posts">
-				<h2>{{post.title}}</h2>
-				<p>
-					{{post.body}}
-				</p>
-			</li>
-		</ul>
-		<div ng-controller="FisrtControler">
-			<p>The ID is {{greeting.id}}</p>
-			<p>The content is {{greeting.content}}</p>
+		
+		<div>
+			<p>Nombre : <input type="text" ng-model="name"></p>
+			<h1>Hola {{name}}</h1>
+			<p ng-bind="name"></p>
+		</div>
+		
+		<div ng-controller="myCtrl">
+			<p ng-repeat="x in greeting">{{x}}</p>
+			<p>{{id}}</p>
+		</div>
+		
+		<div data-ng-app="" data-ng-init="quantity=1;price=5">
+			<h2>Cost Calculator</h2>
+		
+			Quantity: <input type="number" ng-model="quantity">
+			Price: <input type="number" ng-model="price">
+		
+			<p><b>Total in dollar:</b> {{quantity * price}}</p>
+		</div>
+		
+		<div ng-controller="questionController">
+			<h1>Pregunta {{pregunta.id}}</h1>
+			<div class="pregunta">
+				<h3>{{pregunta.premisa}}</h3>
+				<ul>
+					<li ng-repeat="respuesta in pregunta.respuestas" ng-click="marcar()">
+						{{respuesta.text}}
+					</li>
+				</ul>
+			</div>
+			<button ng-click="responder()">Responder</button>
 		</div>
 	</body>
 </html>
