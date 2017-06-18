@@ -11,40 +11,72 @@
 	
 	<body ng-app="myApp">
 		<div>
-			<h3>{{"Angul"+"arJS"}}</h3>
+			<div>
+				<h3>{{"Angul"+"arJS"}}</h3>
+			</div>
+			
+			<div>
+				<p>Nombre : <input type="text" ng-model="name"></p>
+				<h1>Hola {{name}}</h1>
+				<p ng-bind="name"></p>
+			</div>
+			
+			<div ng-controller="myCtrl">
+				<p ng-repeat="x in greeting">{{x}}</p>
+				<p>{{id}}</p>
+			</div>
+			
+			<div data-ng-app="" data-ng-init="quantity=1;price=5">
+				<h2>Cost Calculator</h2>
+			
+				Quantity: <input type="number" ng-model="quantity">
+				Price: <input type="number" ng-model="price">
+			
+				<p><b>Total in dollar:</b> {{quantity * price}}</p>
+			</div>
+			
+			<div ng-controller="questionController">
+				<h1>Pregunta {{pregunta.id}}</h1>
+				<div class="pregunta">
+					<h3>{{pregunta.premisa}}</h3>
+					<ul>
+						<li ng-repeat="respuesta in pregunta.respuestas" ng-click="marcar()">
+							{{respuesta.text}}
+						</li>
+					</ul>
+				</div>
+				<button ng-click="responder()">Responder</button>
+			</div>
 		</div>
 		
 		<div>
-			<p>Nombre : <input type="text" ng-model="name"></p>
-			<h1>Hola {{name}}</h1>
-			<p ng-bind="name"></p>
-		</div>
-		
-		<div ng-controller="myCtrl">
-			<p ng-repeat="x in greeting">{{x}}</p>
-			<p>{{id}}</p>
-		</div>
-		
-		<div data-ng-app="" data-ng-init="quantity=1;price=5">
-			<h2>Cost Calculator</h2>
-		
-			Quantity: <input type="number" ng-model="quantity">
-			Price: <input type="number" ng-model="price">
-		
-			<p><b>Total in dollar:</b> {{quantity * price}}</p>
-		</div>
-		
-		<div ng-controller="questionController">
-			<h1>Pregunta {{pregunta.id}}</h1>
-			<div class="pregunta">
-				<h3>{{pregunta.premisa}}</h3>
+			<div ng-controller="myCtrl">
+				<p>The button has been clicked {{count}} times.</p>
+				<button ng-click="myFunc()">OK</button>
+			</div>
+			
+			<div ng-controller="customersCtrl">
 				<ul>
-					<li ng-repeat="respuesta in pregunta.respuestas" ng-click="marcar()">
-						{{respuesta.text}}
+					<li ng-repeat="friend in friends">
+					[{{$index + 1}}] - {{friend.name}} - {{friend.age}} years old.
 					</li>
 				</ul>
+				<table>
+					<tr ng-repeat="friend in friends">
+						<td>{{friend.name}}</td>
+						<td>{{friend.age}}</td>
+					</tr>
+				</table>
+				<div>
+					<input type="text" ng-model="name" placeholder="name"></input>
+					<input type="text" ng-model="age" placeholder="age"></input>
+					<input type="text" ng-model="gender" placeholder="gender"></input>
+					<button ng-click="add()">Add</button>
+					<button ng-click="clean()">Clean</button>
+				</div>
 			</div>
-			<button ng-click="responder()">Responder</button>
+        </div>
+			</div>
 		</div>
 	</body>
 </html>
